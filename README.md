@@ -1,6 +1,6 @@
 # AWS Data pipeline using Reddit API (Social Platform)
 
-![image](image/download.png)
+![image](images/download.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
