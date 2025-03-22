@@ -1,0 +1,1367 @@
+[2025-03-22T05:58:38.122+0000] {processor.py:186} INFO - Started process (PID=36) to work on /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:58:38.126+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-03-22T05:58:38.132+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:58:38.132+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:58:38.174+0000] {logging_mixin.py:190} INFO - AKIAZVMTVCJLW4TUQH3M
+[2025-03-22T05:58:38.175+0000] {logging_mixin.py:190} INFO - Ow2sEqXLS4hP3PSLRUQPMMCCW6MpUrinEUMyglAL
+[2025-03-22T05:58:38.175+0000] {logging_mixin.py:190} INFO - reddit-data-engineering-fmbvirtue
+[2025-03-22T05:58:38.274+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 569, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T05:58:38.275+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T05:58:38.345+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 569, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T05:58:38.346+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T05:58:38.675+0000] {processor.py:925} INFO - DAG(s) 'etl_reddit_pipeline' retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:58:38.732+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:58:38.731+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-22T05:58:38.784+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:58:38.783+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+[2025-03-22T05:58:38.826+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.718 seconds
+[2025-03-22T05:59:09.040+0000] {processor.py:186} INFO - Started process (PID=38) to work on /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:59:09.043+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-03-22T05:59:09.047+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:59:09.047+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:59:09.059+0000] {logging_mixin.py:190} INFO - AKIAZVMTVCJLW4TUQH3M
+[2025-03-22T05:59:09.059+0000] {logging_mixin.py:190} INFO - Ow2sEqXLS4hP3PSLRUQPMMCCW6MpUrinEUMyglAL
+[2025-03-22T05:59:09.059+0000] {logging_mixin.py:190} INFO - reddit-data-engineering-fmbvirtue
+[2025-03-22T05:59:09.108+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T05:59:09.109+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T05:59:09.158+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T05:59:09.159+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T05:59:09.417+0000] {processor.py:925} INFO - DAG(s) 'etl_reddit_pipeline' retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:59:09.445+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:59:09.444+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-22T05:59:09.478+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:59:09.478+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+[2025-03-22T05:59:09.523+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.490 seconds
+[2025-03-22T05:59:40.170+0000] {processor.py:186} INFO - Started process (PID=40) to work on /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:59:40.192+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-03-22T05:59:40.194+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:59:40.194+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:59:40.228+0000] {logging_mixin.py:190} INFO - AKIAZVMTVCJLW4TUQH3M
+[2025-03-22T05:59:40.228+0000] {logging_mixin.py:190} INFO - Ow2sEqXLS4hP3PSLRUQPMMCCW6MpUrinEUMyglAL
+[2025-03-22T05:59:40.229+0000] {logging_mixin.py:190} INFO - reddit-data-engineering-fmbvirtue
+[2025-03-22T05:59:40.286+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T05:59:40.319+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T05:59:40.368+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T05:59:40.432+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T05:59:40.871+0000] {processor.py:925} INFO - DAG(s) 'etl_reddit_pipeline' retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T05:59:41.091+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:59:41.090+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-22T05:59:41.227+0000] {logging_mixin.py:190} INFO - [2025-03-22T05:59:41.226+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+[2025-03-22T06:01:01.382+0000] {processor.py:186} INFO - Started process (PID=42) to work on /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:01:01.385+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-03-22T06:01:01.387+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:01:01.387+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:01:01.397+0000] {logging_mixin.py:190} INFO - AKIAZVMTVCJLW4TUQH3M
+[2025-03-22T06:01:01.397+0000] {logging_mixin.py:190} INFO - Ow2sEqXLS4hP3PSLRUQPMMCCW6MpUrinEUMyglAL
+[2025-03-22T06:01:01.397+0000] {logging_mixin.py:190} INFO - reddit-data-engineering-fmbvirtue
+[2025-03-22T06:01:01.428+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T06:01:01.428+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T06:01:01.471+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T06:01:01.471+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T06:01:01.694+0000] {processor.py:925} INFO - DAG(s) 'etl_reddit_pipeline' retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:01:01.733+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:01:01.730+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-22T06:01:01.765+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:01:01.764+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+[2025-03-22T06:01:01.792+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.420 seconds
+[2025-03-22T06:01:31.948+0000] {processor.py:186} INFO - Started process (PID=44) to work on /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:01:31.950+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-03-22T06:01:31.952+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:01:31.951+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:01:31.957+0000] {logging_mixin.py:190} INFO - AKIAZVMTVCJLW4TUQH3M
+[2025-03-22T06:01:31.958+0000] {logging_mixin.py:190} INFO - Ow2sEqXLS4hP3PSLRUQPMMCCW6MpUrinEUMyglAL
+[2025-03-22T06:01:31.958+0000] {logging_mixin.py:190} INFO - reddit-data-engineering-fmbvirtue
+[2025-03-22T06:01:31.981+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T06:01:31.982+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T06:01:32.011+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T06:01:32.012+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T06:01:32.165+0000] {processor.py:925} INFO - DAG(s) 'etl_reddit_pipeline' retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:01:32.183+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:01:32.182+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-22T06:01:32.201+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:01:32.201+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+[2025-03-22T06:01:32.219+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.275 seconds
+[2025-03-22T06:02:02.380+0000] {processor.py:186} INFO - Started process (PID=46) to work on /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:02:02.381+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/reddit_dag.py for tasks to queue
+[2025-03-22T06:02:02.383+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:02:02.383+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:02:02.390+0000] {logging_mixin.py:190} INFO - AKIAZVMTVCJLW4TUQH3M
+[2025-03-22T06:02:02.391+0000] {logging_mixin.py:190} INFO - Ow2sEqXLS4hP3PSLRUQPMMCCW6MpUrinEUMyglAL
+[2025-03-22T06:02:02.391+0000] {logging_mixin.py:190} INFO - reddit-data-engineering-fmbvirtue
+[2025-03-22T06:02:02.417+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T06:02:02.417+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T06:02:02.450+0000] {logging_mixin.py:190} WARNING - 
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.2.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+    run_command_with_daemon_option(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+    callback=lambda: _run_scheduler_job(args),
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 995, in _execute
+    self.processor_agent.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 172, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 247, in _run_processor_manager
+    processor_manager.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 489, in start
+    return self._run_parsing_loop()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 651, in _run_parsing_loop
+    self.start_new_processes()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/traces/tracer.py", line 58, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/manager.py", line 1239, in start_new_processes
+    processor.start()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 263, in start
+    process.start()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/usr/local/lib/python3.10/multiprocessing/context.py", line 281, in _Popen
+    return Popen(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/usr/local/lib/python3.10/multiprocessing/popen_fork.py", line 71, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 918, in process_file
+    dagbag = DagFileProcessor._get_dagbag(file_path)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/dag_processing/processor.py", line 882, in _get_dagbag
+    return DagBag(file_path, include_examples=False)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 173, in __init__
+    self.collect_dags(
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 602, in collect_dags
+    found_dags = self.process_file(filepath, only_if_updated=only_if_updated, safe_mode=safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 341, in process_file
+    mods = self._load_modules_from_file(filepath, safe_mode)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 413, in _load_modules_from_file
+    return parse(mod_name, filepath)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "/opt/airflow/dags/reddit_dag.py", line 10, in <module>
+    from pipelines.reddit_pipeline import reddit_pipeline
+  File "/opt/airflow/pipelines/reddit_pipeline.py", line 2, in <module>
+    from etls.reddit_etl import connect_reddit, extract_posts, transform_data
+  File "/opt/airflow/etls/reddit_etl.py", line 3, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/home/airflow/.local/lib/python3.10/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+[2025-03-22T06:02:02.450+0000] {logging_mixin.py:190} WARNING - AttributeError: _ARRAY_API not found
+[2025-03-22T06:02:02.609+0000] {processor.py:925} INFO - DAG(s) 'etl_reddit_pipeline' retrieved from /opt/airflow/dags/reddit_dag.py
+[2025-03-22T06:02:02.626+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:02:02.626+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-03-22T06:02:02.643+0000] {logging_mixin.py:190} INFO - [2025-03-22T06:02:02.642+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_reddit_pipeline to 2025-03-22 00:00:00+00:00, run_after=2025-03-23 00:00:00+00:00
+[2025-03-22T06:02:02.655+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/reddit_dag.py took 0.281 seconds
