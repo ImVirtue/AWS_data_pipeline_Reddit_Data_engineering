@@ -1,13 +1,14 @@
 import psycopg2
+from utils.constants import DATABASE_NAME, DATABASE_HOST, DATABASE_PORT, DATABASE_USER, DATABASE_PASSWORD
 
 def create_rds_connection():
     conn = psycopg2.connect(
-        dbname = 'reddit_aws',
-        user = 'postgres',
+        dbname = DATABASE_PASSWORD,
+        user = DATABASE_USER,
         password = 'Matkhauchung1',
-        host = 'database-reddit.clwssykgs0bu.us-west-2.rds.amazonaws.com',
+        host = DATABASE_HOST,
         # host = 'localhost',
-        port = '5432'
+        port = DATABASE_PORT
     )
 
     return conn
