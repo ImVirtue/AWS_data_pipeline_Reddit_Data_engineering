@@ -3,9 +3,9 @@ from utils.constants import DATABASE_NAME, DATABASE_HOST, DATABASE_PORT, DATABAS
 
 def create_rds_connection():
     conn = psycopg2.connect(
-        dbname = DATABASE_PASSWORD,
+        dbname = DATABASE_NAME,
         user = DATABASE_USER,
-        password = 'Matkhauchung1',
+        password = DATABASE_PASSWORD,
         host = DATABASE_HOST,
         # host = 'localhost',
         port = DATABASE_PORT
