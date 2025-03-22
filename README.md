@@ -6,8 +6,7 @@
 - [Introduction](#introduction)
 - [Overview](#overview)
 - [Architecture](#architecture)
-- [Prerequisites](#prerequisites)
-- [System Setup](#system-setup)
+- [Result](#result)
   
 ## Introduction
 This project provides a comprehensive data pipeline solution to extract, transform, and load (ETL) Reddit data into a Redshift data warehouse.
@@ -25,4 +24,18 @@ The pipeline is designed to:
 
 ## Architecture
 ![image](images/system_architecture.png)
+1. **Reddit API**: Source of the data.
+2. **Apache Airflow**: Orchestrates the ETL process and manages task distribution.
+3. **RDS PostgreSQL**: Storage data from Reddit API.
+4. **Amazon S3**: Raw data storage.
+5. **AWS Glue**: Data cataloging and ETL jobs.
+6. **Amazon Athena**: SQL-based data transformation.
+7. **Amazon Redshift**: Data warehousing and analytics.
+
+## Result
+**Redshift:**
+![image](images/redshift.png)
+
+**Athena:**
+![image](images/Athena.png)
 
